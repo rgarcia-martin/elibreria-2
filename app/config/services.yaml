@@ -1,0 +1,42 @@
+# config/services.yaml
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    # por defecto los servicios son privados; los controladores se hacen "especiales" con el tag
+
+  # Registra TODO el código como servicios (excepto Entities y Kernel)
+  App\:
+    resource: '../src/'
+    exclude:
+      - '../src/Kernel.php'
+      - '../src/Infrastructure/Persistence/Doctrine/Entity/'
+
+  # Controladores (tu carpeta real)
+  App\Infrastructure\Symfony\Controller\:
+    resource: '../src/Infrastructure/Symfony/Controller/'
+    tags: ['controller.service_arguments']
+
+  # ===== Aliases hexagonales (Dom. -> Infra) =====
+
+  # Repositorios dominio → Doctrine
+  App\Domain\Catalog\ArticleRepository: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineArticleRepository'
+  App\Domain\Partners\ProviderRepository: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineProviderRepository'
+  App\Domain\Locations\LocationRepository: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineLocationRepository'
+  App\Domain\Inventory\GoodsReceiptRepository: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineGoodsReceiptRepository'
+  App\Domain\Inventory\StockRepository: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineStockRepository'
+  App\Domain\Sales\SaleRepository: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineSaleRepository'
+  App\Domain\Invoicing\InvoiceRepository: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineInvoiceRepository'
+  App\Domain\Identity\CompanyIdentityRepository: '@App\Infrastructure\Persistence\Doctrine\Repository\DoctrineCompanyIdentityRepository'
+
+  # Puertos (adapters de desarrollo)
+  App\Domain\Ports\PaymentGatewayPort: '@App\Infrastructure\Adapters\Payment\InMemoryPaymentGateway'
+  App\Domain\Ports\InvoiceNumberSequencerPort: '@App\Infrastructure\Adapters\Invoicing\InMemoryInvoiceNumberSequencer'
+  App\Domain\Ports\DigitalInvoiceEmitterPort: '@App\Infrastructure\Adapters\Invoicing\NullDigitalInvoiceEmitter'
+  App\Domain\Inventory\ConsignmentReturnRepository: '@App\Infrastructure\Adapters\Inventory\InMemoryConsignmentReturnRepository'
+
+  # Política de selección de stock
+  App\Domain\Pricing\StockSelectionPolicy: '@App\Domain\Pricing\BestConditionsStockSelector'
+
+  # Reloj del sistema
+  App\Domain\Common\Clock: '@App\Domain\Common\SystemClock'

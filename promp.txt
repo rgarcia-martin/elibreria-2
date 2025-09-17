@@ -1,0 +1,10 @@
+actúa como un experto de software. aplica programación hexagonal, patrones de diseño y sigue los principios SOLID siempre que puedas. recuerda que en este proyecto hay que trabajar con las siguientes tecnologías para backend: PHP 8.2, Symfony 7.3. genera en primer lugar las clases necesarias para modelar las siguientes features: 
+-Como usuario quiero registrar ventas como si fuera un TPV donde ir leyendo códigos de barras de cada artículo, poder especificar el numero de artículos que se llevan, el descuento que quiero aplicar, cobrar al usuario, tanto en efectivo como con tarjeta, y poder generar una factura (simplificada o no) en una interfaz de usuario sencilla y rápida de usar. 
+-Como usuario quiero ser capaz de trabajar en depósito con proveedores registrando albaranes de entrada de artículos. 
+-Como usuario quiero ser capaz de trabajar con artículos que yo mismo haya comprando actuando como un proveedor más que de el 100% del beneficio. 
+-Como usuario quiero que cada venta realizada en el sistema sea seleccionada de la mejor condiciones de venta tenga en ese momento, siendo por ejemplo dos ejemplares disponibles en el que uno se obtiene un 20% y el otro un 80%, seleccionar siempre el mejor. 
+-Como usuario quiero que se pueda registrar un albarán únicamente realizándole fotos. 
+-Como usuario quiero poder generar/gestionar facturas (tanto normales como digitales) teniendo en cuenta rectificaciones etc...
+-Como usuario quiero poder gestionar diferentes localizaciones para saber en todo momento en donde se encuentra cada articulo.
+-Como administrador quiero poder gestionar usuarios del sistema y sus roles de acceso
+-Como administrador quiero poder gestionar diferentes identificaciones con las que generar las facturas

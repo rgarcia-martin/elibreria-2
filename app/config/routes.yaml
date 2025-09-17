@@ -1,0 +1,6 @@
+# config/routes.yaml
+controllers:
+  resource:
+    path: ../src/Infrastructure/Symfony/Controller/
+    namespace: App\Infrastructure\Symfony\Controller
+  type: attribute

@@ -1,0 +1,62 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+
+        # Indica versión del servidor (MySQL 8, MariaDB, etc.)
+        # Puedes definir DB_SERVER_VERSION en .env.local, p.ej. "8.0" o "mariadb-10.11"
+        server_version: '%env(default::string:DB_SERVER_VERSION)%'
+
+        charset: utf8mb4
+        default_table_options:
+            charset: utf8mb4
+            collate: utf8mb4_unicode_ci
+
+        profiling_collect_backtrace: '%kernel.debug%'
+        use_savepoints: true
+
+    orm:
+        auto_generate_proxy_classes: true
+        enable_lazy_ghost_objects: true
+        report_fields_where_declared: true
+        validate_xml_mapping: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+
+        # Importante: desactivamos auto_mapping y declaramos nuestro mapeo de Entities Doctrine
+        auto_mapping: false
+        mappings:
+            AppInfrastructureDoctrine:
+                type: attribute
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Infrastructure/Persistence/Doctrine/Entity'
+                prefix: 'App\Infrastructure\Persistence\Doctrine\Entity'
+                alias: Infra
+
+        # Opcional: si no usas el resolver de controladores de Doctrine
+        controller_resolver:
+            auto_mapping: false
+
+when@test:
+    doctrine:
+        dbal:
+            # "TEST_TOKEN" es típico de ParaTest
+            dbname_suffix: '_test%env(default::TEST_TOKEN)%'
+
+when@prod:
+    doctrine:
+        orm:
+            auto_generate_proxy_classes: false
+            proxy_dir: '%kernel.build_dir%/doctrine/orm/Proxies'
+            query_cache_driver:
+                type: pool
+                pool: doctrine.system_cache_pool
+            result_cache_driver:
+                type: pool
+                pool: doctrine.result_cache_pool
+
+    framework:
+        cache:
+            pools:
+                doctrine.result_cache_pool:
+                    adapter: cache.app
+                doctrine.system_cache_pool:
+                    adapter: cache.system

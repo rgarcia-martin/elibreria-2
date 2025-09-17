@@ -1,0 +1,16 @@
+# General
+.DS_Store
+*.log
+
+
+# Docker
+/db-data
+
+
+# Symfony app (dentro de app/)
+app/var/
+app/vendor/
+app/.env.local
+app/.env.local.php
+app/.phpunit.result.cache
+app/.php-cs-fixer.cache

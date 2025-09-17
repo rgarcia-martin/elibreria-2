@@ -1,0 +1,9 @@
+.git
+**/.git
+node_modules
+app/var
+app/vendor
+app/.env.local
+app/.php-cs-fixer.cache
+app/.idea
+app/.vscode
