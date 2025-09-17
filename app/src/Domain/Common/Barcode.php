@@ -6,8 +6,7 @@ namespace App\Domain\Common;
 
 final readonly class Barcode
 {
-    public function __construct(public string $value)
-    {
-        if ($value === '') throw new \InvalidArgumentException('Código de barras vacío');
-    }
+    public function __construct(
+        public string $value
+    ) {}
 }
