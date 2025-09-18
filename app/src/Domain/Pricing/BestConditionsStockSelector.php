@@ -7,7 +7,7 @@ namespace App\Domain\Pricing;
 use App\Domain\Sales\Sale;
 use App\Domain\Inventory\{StockRepository, StockUnit, StockUnitId};
 
-final class BestConditionsStockSelector implements StockSelectionPolicy
+class BestConditionsStockSelector implements StockSelectionPolicy
 {
     public function selectFor(Sale $sale, StockRepository $stock): array
     {

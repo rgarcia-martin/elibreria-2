@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Common;
 
-final readonly class Percentage
+readonly class Percentage
 {
     public function __construct(public float $value)
     {

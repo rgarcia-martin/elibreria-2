@@ -10,7 +10,7 @@ use App\Domain\Catalog\ArticleId;
 use App\Domain\Common\Money;
 use App\Domain\Locations\LocationId;
 
-final class GoodsReceiptService
+class GoodsReceiptService
 {
     public function __construct(
         private GoodsReceiptRepository $receipts,

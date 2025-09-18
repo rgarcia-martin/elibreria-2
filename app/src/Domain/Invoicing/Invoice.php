@@ -8,7 +8,7 @@ use App\Domain\Common\Money;
 use App\Domain\Sales\SaleId;
 use App\Domain\Identity\CompanyIdentityId;
 
-final class Invoice
+class Invoice
 {
     /** @var InvoiceLine[] */
     private array $lines = [];

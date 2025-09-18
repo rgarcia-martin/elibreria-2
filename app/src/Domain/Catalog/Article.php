@@ -6,7 +6,7 @@ namespace App\Domain\Catalog;
 
 use App\Domain\Common\{Money, Barcode, Percentage};
 
-final class Article
+class Article
 {
     public function __construct(
         private ArticleId $id,

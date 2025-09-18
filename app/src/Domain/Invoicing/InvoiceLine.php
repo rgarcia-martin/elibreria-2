@@ -6,7 +6,7 @@ namespace App\Domain\Invoicing;
 
 use App\Domain\Common\{Money, Percentage};
 
-final class InvoiceLine
+class InvoiceLine
 {
     public function __construct(
         private string $description,

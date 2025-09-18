@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Common;
 
-final readonly class Money
+readonly class Money
 {
     public function __construct(public int $amount, public string $currency='EUR')
     {

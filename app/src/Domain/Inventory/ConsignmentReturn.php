@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Inventory;
 
-final class ConsignmentReturn
+class ConsignmentReturn
 {
     /** @var StockUnitId[] */
     private array $units = [];

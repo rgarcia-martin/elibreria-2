@@ -7,7 +7,7 @@ namespace App\Domain\Sales;
 use App\Domain\Common\{Money, Discount, Percentage, Quantity};
 use App\Domain\Catalog\ArticleId;
 
-final class SaleLine
+class SaleLine
 {
     public function __construct(
         private SaleLineId $id,

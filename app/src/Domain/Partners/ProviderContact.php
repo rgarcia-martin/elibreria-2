@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Partners;
 
-final class ProviderContact
+class ProviderContact
 {
     public function __construct(
         private string $email,

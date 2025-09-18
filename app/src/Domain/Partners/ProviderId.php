@@ -6,4 +6,4 @@ namespace App\Domain\Partners;
 
 use App\Domain\Common\Uuid;
 
-final class ProviderId extends Uuid {}
+class ProviderId extends Uuid {}

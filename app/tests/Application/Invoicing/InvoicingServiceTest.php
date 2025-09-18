@@ -33,24 +33,25 @@ final class InvoicingServiceTest extends BaseTestCase
     private InvoicingService $service;
 
     protected function setUp(): void
-    {
-        parent::setUp();
+{
+    parent::setUp();
 
-        $this->invoiceRepo = $this->createMock(InvoiceRepository::class);
-        $this->saleRepo    = $this->createMock(SaleRepository::class);
-        $this->sequencer   = $this->createMock(InvoiceNumberSequencerPort::class);
-        $this->emitter     = $this->createMock(DigitalInvoiceEmitterPort::class);
-        $this->identityRepo= $this->createMock(CompanyIdentityRepository::class);
+    $this->invoiceRepo = $this->createMock(InvoiceRepository::class);
+    $this->saleRepo    = $this->createMock(SaleRepository::class);
+    $this->sequencer   = $this->createMock(InvoiceNumberSequencerPort::class);
+    $this->emitter     = $this->createMock(DigitalInvoiceEmitterPort::class);
+    $this->identityRepo= $this->createMock(CompanyIdentityRepository::class);
+    $this->clock       = $this->createMock(\App\Domain\Common\Clock::class);
 
-        // Order: invoices, sales, sequencer, digitalEmitter, identities
-        $this->service = new InvoicingService(
-            $this->invoiceRepo,
-            $this->saleRepo,
-            $this->sequencer,
-            $this->emitter,
-            $this->identityRepo
-        );
-    }
+    $this->service = new InvoicingService(
+        $this->invoiceRepo,
+        $this->saleRepo,
+        $this->sequencer,
+        $this->emitter,
+        $this->identityRepo,
+        $this->clock // <— 5º parámetro esperado
+    );
+}
 
     public function test_generate_invoice_for_sale(): void
     {

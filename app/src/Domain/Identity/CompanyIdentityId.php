@@ -6,4 +6,4 @@ namespace App\Domain\Identity;
 
 use App\Domain\Common\Uuid;
 
-final class CompanyIdentityId extends Uuid {}
+class CompanyIdentityId extends Uuid {}

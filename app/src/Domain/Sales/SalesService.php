@@ -10,7 +10,7 @@ use App\Domain\Inventory\{StockRepository, StockUnitId};
 use App\Domain\Pricing\StockSelectionPolicy;
 use App\Domain\Ports\PaymentGatewayPort;
 
-final class SalesService
+class SalesService
 {
     public function __construct(
         private SaleRepository $sales,

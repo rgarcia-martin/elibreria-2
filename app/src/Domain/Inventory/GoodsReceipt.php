@@ -6,7 +6,7 @@ namespace App\Domain\Inventory;
 
 use App\Domain\Partners\ProviderId;
 
-final class GoodsReceipt
+class GoodsReceipt
 {
     /** @var GoodsReceiptLine[] */
     private array $lines = [];

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Common;
 
-final readonly class Quantity
+readonly class Quantity
 {
     public function __construct(public int $units)
     {

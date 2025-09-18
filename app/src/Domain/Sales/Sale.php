@@ -6,7 +6,7 @@ namespace App\Domain\Sales;
 
 use App\Domain\Common\{Money, Discount};
 
-final class Sale
+class Sale
 {
     private SaleId $id;
     private \DateTimeImmutable $createdAt;

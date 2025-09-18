@@ -6,4 +6,4 @@ namespace App\Domain\Sales;
 
 use App\Domain\Common\Uuid;
 
-final class SaleId extends Uuid {}
+class SaleId extends Uuid {}

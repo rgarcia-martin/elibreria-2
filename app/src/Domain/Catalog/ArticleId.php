@@ -6,4 +6,4 @@ namespace App\Domain\Catalog;
 
 use App\Domain\Common\Uuid;
 
-final class ArticleId extends Uuid {}
+class ArticleId extends Uuid {}

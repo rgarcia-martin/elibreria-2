@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Users;
 
-final class User
+class User
 {
     /** @param Role[] $roles */
     public function __construct(

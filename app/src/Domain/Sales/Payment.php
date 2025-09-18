@@ -6,7 +6,7 @@ namespace App\Domain\Sales;
 
 use App\Domain\Common\Money;
 
-final readonly class Payment
+readonly class Payment
 {
     public function __construct(public Money $amount, public PaymentMethod $method) {}
 }

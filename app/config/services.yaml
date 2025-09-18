@@ -40,3 +40,61 @@ services:
 
   # Reloj del sistema
   App\Domain\Common\Clock: '@App\Domain\Common\SystemClock'
+
+  # Normalizers (register with high priority so they win over ObjectNormalizer)
+  App\Infrastructure\Serialization\Normalizer\MoneyNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 200 }]
+
+  App\Infrastructure\Serialization\Normalizer\PercentageNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 200 }]
+
+  App\Infrastructure\Serialization\Normalizer\UuidNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 200 }]
+
+  App\Infrastructure\Serialization\Normalizer\DiscountNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 190 }]
+
+  App\Infrastructure\Serialization\Normalizer\SaleLineNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 180 }]
+
+  App\Infrastructure\Serialization\Normalizer\SaleNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 170 }]
+
+  App\Infrastructure\Serialization\Normalizer\GoodsReceiptLineNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 180 }]
+
+  App\Infrastructure\Serialization\Normalizer\GoodsReceiptNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 170 }]
+
+  App\Infrastructure\Serialization\Normalizer\InvoiceLineNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 180 }]
+
+  App\Infrastructure\Serialization\Normalizer\InvoiceNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 170 }]
+
+  App\Infrastructure\Serialization\Normalizer\StockUnitNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 170 }]
+
+  App\Infrastructure\Serialization\Normalizer\BarcodeNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 220 }]
+
+  App\Infrastructure\Serialization\Normalizer\ArticleNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 200 }]
+
+  App\Infrastructure\Serialization\Normalizer\ProviderNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 200 }]
+
+  App\Infrastructure\Serialization\Normalizer\LocationNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 200 }]
+
+  App\Infrastructure\Serialization\Normalizer\CompanyIdentityNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 200 }]
+
+  App\Infrastructure\Serialization\Normalizer\UserNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 200 }]
+
+  App\Infrastructure\Serialization\Normalizer\GoodsReceiptPhotoNormalizer:
+    tags: [{ name: 'serializer.normalizer', priority: 200 }]
+
+  # JSON responder helper
+  App\Infrastructure\Serialization\JsonApiResponder: ~

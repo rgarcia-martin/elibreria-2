@@ -9,7 +9,7 @@ use App\Domain\Identity\CompanyIdentityId;
 use App\Domain\Ports\{InvoiceNumberSequencerPort, DigitalInvoiceEmitterPort};
 use App\Domain\Common\Clock;
 
-final class InvoicingService
+class InvoicingService
 {
     public function __construct(
         private InvoiceRepository $invoices,

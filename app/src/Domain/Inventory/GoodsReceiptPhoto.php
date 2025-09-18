@@ -6,7 +6,7 @@ namespace App\Domain\Inventory;
 
 use App\Domain\Common\Uuid;
 
-final class GoodsReceiptPhoto
+class GoodsReceiptPhoto
 {
     public function __construct(public Uuid $id, public string $uri, public string $mime) {}
 }

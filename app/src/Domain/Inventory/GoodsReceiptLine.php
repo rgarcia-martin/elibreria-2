@@ -8,7 +8,7 @@ use App\Domain\Common\{Money, Quantity, ProfitSharing};
 use App\Domain\Catalog\ArticleId;
 use App\Domain\Locations\LocationId;
 
-final class GoodsReceiptLine
+class GoodsReceiptLine
 {
     public function __construct(
         private ArticleId $articleId,

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Locations;
 
-final class Location
+class Location
 {
     public function __construct(
         private LocationId $id,

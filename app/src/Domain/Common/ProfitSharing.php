@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Common;
 
-final readonly class ProfitSharing
+readonly class ProfitSharing
 {
     public function __construct(public Percentage $merchantShare, public Percentage $providerShare)
     {

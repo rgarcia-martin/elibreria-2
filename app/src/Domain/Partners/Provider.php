@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Partners;
 
-final class Provider
+class Provider
 {
     public function __construct(
         private ProviderId $id,

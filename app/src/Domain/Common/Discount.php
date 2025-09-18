@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Common;
 
-final readonly class Discount
+readonly class Discount
 {
 
     private function __construct(

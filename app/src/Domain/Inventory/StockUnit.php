@@ -9,7 +9,7 @@ use App\Domain\Partners\ProviderId;
 use App\Domain\Common\{Money, ProfitSharing};
 use App\Domain\Locations\LocationId;
 
-final class StockUnit
+class StockUnit
 {
     public function __construct(
         private StockUnitId $id,

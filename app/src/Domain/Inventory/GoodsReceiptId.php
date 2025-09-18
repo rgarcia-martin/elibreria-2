@@ -6,4 +6,4 @@ namespace App\Domain\Inventory;
 
 use App\Domain\Common\Uuid;
 
-final class GoodsReceiptId extends Uuid {}
+class GoodsReceiptId extends Uuid {}
